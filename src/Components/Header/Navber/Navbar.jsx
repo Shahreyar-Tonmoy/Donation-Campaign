@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import Logo from "/Assignment/Assignment-8/src/assets/Logo.png";
 
 
 const Navbar = () => {
@@ -105,7 +106,7 @@ const Navbar = () => {
 
 
 
-            <div className="navbar bg-base-100 md:px-8">
+            <div className="navbar bg-base-100 lg:mt-5 md:px-8">
                 <div className="navbar-start">
                     <div className="dropdown dropdown-start">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -114,7 +115,7 @@ const Navbar = () => {
                         <ul tabIndex={0} className=" dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
 
 
-                            <li className="block p-1 font-sans text-sm font-normal leading-normal text-inherit antialiased">
+                            <li className="block p-1 font-sans text-lg font-bold leading-normal text-inherit antialiased">
                                 <NavLink
                                     to="/"
                                     className={({ isActive, isPending }) =>
@@ -127,7 +128,7 @@ const Navbar = () => {
 
 
 
-                            <li className="block p-1 font-sans text-sm font-normal leading-normal text-inherit antialiased">
+                            <li className="block p-1 font-sans text-lg font-bold leading-normal text-inherit antialiased">
                                 <NavLink
                                     to="/Donation"
                                     className={({ isActive, isPending }) =>
@@ -137,7 +138,7 @@ const Navbar = () => {
                                     Donation
                                 </NavLink>
                             </li>
-                            <li className="block p-1 font-sans text-sm font-normal leading-normal text-inherit antialiased">
+                            <li className="block p-1 font-sans text-lg font-bold leading-normal text-inherit antialiased">
                                 <NavLink
                                     to="/Statistics"
                                     className={({ isActive, isPending }) =>
@@ -149,11 +150,21 @@ const Navbar = () => {
                             </li>
                         </ul>
                     </div>
-                    <img className="w-32 md:w-40" src="/src/assets/Logo.png" alt="" />
+                    <li className="block p-1 font-sans text-lg font-bold leading-normal text-inherit antialiased">
+                                <NavLink
+                                    to="/"
+                                    className={({ isActive, isPending }) =>
+                                        isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""
+                                    }
+                                >
+                                    <img className="w-32 md:w-40" src={Logo} alt="" />
+                                </NavLink>
+                            </li>
+                   
                 </div>
                 <div className="navbar-end hidden lg:flex">
                     <ul className="ml-auto mr-8 hidden items-center gap-6 lg:flex">
-                        <li className="block p-1 font-sans text-sm font-normal leading-normal text-inherit antialiased">
+                        <li className="block p-1 font-sans text-lg font-bold leading-normal text-inherit antialiased">
                             <NavLink
                                 to="/"
                                 className={({ isActive, isPending }) =>
@@ -163,7 +174,7 @@ const Navbar = () => {
                                 Home
                             </NavLink>
                         </li>
-                        <li className="block p-1 font-sans text-sm font-normal leading-normal text-inherit antialiased">
+                        <li className="block p-1 font-sans text-lg font-bold leading-normal text-inherit antialiased">
                             <NavLink
                                 to="/Donation"
                                 className={({ isActive, isPending }) =>
@@ -173,7 +184,7 @@ const Navbar = () => {
                                 Donation
                             </NavLink>
                         </li>
-                        <li className="block p-1 font-sans text-sm font-normal leading-normal text-inherit antialiased">
+                        <li className="block p-1 font-sans text-lg font-bold leading-normal text-inherit antialiased">
                             <NavLink
                                 to="/Statistics"
                                 className={({ isActive, isPending }) =>

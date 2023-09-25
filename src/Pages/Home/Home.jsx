@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import Banner from "../../Components/Header/Banner/Banner";
-import Card from "../../Components/cardsection/Cardinfo";
+import CardInfo from "../../Components/card/Cardinfo";
+
 
 const Home = () => {
 
@@ -9,8 +10,9 @@ const Home = () => {
 
     return (
         <div>
-            {/* <Banner></Banner> */}
-            <Card donationData={donationData}></Card>
+            <Banner></Banner>
+            
+            <CardInfo donationData={donationData}></CardInfo>
         </div>
     );
 };
