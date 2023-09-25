@@ -151,14 +151,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <li className="block p-1 font-sans text-lg font-bold leading-normal text-inherit antialiased">
-                                <NavLink
-                                    to="/"
-                                    className={({ isActive, isPending }) =>
-                                        isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""
-                                    }
-                                >
-                                    <img className="w-32 md:w-40" src={Logo} alt="" />
-                                </NavLink>
+                    <img className="w-32 md:w-40" src={Logo} alt="" />
                             </li>
                    
                 </div>

@@ -3,7 +3,7 @@ import Navbar from "../Components/Header/Navber/Navbar";
 
 const Mainlayout = () => {
     return (
-        <div className="max-w-screen-xl mx-auto">
+        <div className="">
             <Navbar></Navbar>
             <Outlet></Outlet>
         </div>
