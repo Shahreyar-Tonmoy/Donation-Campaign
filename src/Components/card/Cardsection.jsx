@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 
 const Cardsection = ({ cardData }) => {
-    const {id, picture, title, category, category_bg_color, card_bg_color, text_and_button_bg_color, description, price } = cardData || {}
+    const {id, picture, title, category, category_bg_color, card_bg_color, text_and_button_bg_color} = cardData || {}
 
 
 

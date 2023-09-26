@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { json, useLoaderData, useParams } from "react-router-dom";
+import {useLoaderData, useParams } from "react-router-dom";
 
-import { ToastContainer, toast } from 'react-toastify';
+
 import 'react-toastify/dist/ReactToastify.css';
+import swal from "sweetalert";
 
 
 
@@ -17,26 +18,40 @@ const Card = () => {
     // console.log(cards);
 
     useEffect(() => {
-        const findData = cards.find(card => card.id == id)
+        const findData = cards?.find(card => card?.id == id)
         setcard(findData);
     }, [id, cards])
 
 
 
 
-    const hendleDonationBtn = () =>{
-        
+    const hendleDonationBtn = () => {
+
         const addDonationItems = []
         const Donation = JSON.parse(localStorage.getItem('donation'))
-        if(!Donation){
+        if (!Donation) {
             addDonationItems.push(card)
-            localStorage.setItem('donation',JSON.stringify(addDonationItems))
-            toast('You are already donated')
+            localStorage.setItem('donation', JSON.stringify(addDonationItems))
+            swal("Thanks for donation!!!", "", "success");
+            
         }
-        else{
-            addDonationItems.push(...Donation,card)
-            localStorage.setItem('donation',JSON.stringify(addDonationItems))
-            toast('You are already donated')
+        else {
+            const isExists = Donation.find(card => card.id == parseInt(id))
+            if (!isExists) {
+                addDonationItems.push(...Donation, card)
+                localStorage.setItem('donation', JSON.stringify(addDonationItems))
+                swal("Thanks for donation!!!", "", "success");
+
+
+            }
+            else {
+                swal("You are already donated!!!", "", "warning");
+                
+            }
+
+
+
+
         }
 
     }
@@ -48,26 +63,26 @@ const Card = () => {
 
     return (
         <div>
-            <ToastContainer />
+            
             <div className="mx-auto max-w-screen-xl px-9 py-12">
 
-                
-                <div className="hero rounded-lg h-[36rem]" style={{ backgroundImage: `url(${card.picture})` }}>
+
+                <div className="hero rounded-lg h-[36rem]" style={{ backgroundImage: `url(${card?.picture})` }}>
                     <div className="hero-overlay rounded-b-lg h-32 mt-[28rem]  bg-opacity-60"></div>
                     <div className="hero-content text-center text-neutral-content">
                         <div className="mt-[28rem] lg:mr-[62rem]">
-                            
-                           
-                            <button onClick={hendleDonationBtn} className="px-6 py-4 rounded-md text-white bg-[#FF444A]">Donate ${card.price}</button>
+
+
+                            <button onClick={hendleDonationBtn} className="px-6 py-4 rounded-md text-white bg-[#FF444A]">Donate ${card?.price}</button>
                         </div>
                     </div>
                 </div>
 
                 <h2 className="mb-2 block mt-14 font-sans text-4xl font-semibold leading-[1.3] tracking-normal text-blue-gray-900 antialiased">
-                    {card.title}
+                    {card?.title}
                 </h2>
                 <p className="block font-sans text-[15px] font-normal leading-relaxed text-gray-700 antialiased">
-                    {card.description}
+                    {card?.description}
                 </p>
             </div>
         </div>
