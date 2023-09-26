@@ -46,15 +46,11 @@ const Donation = () => {
                         <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-2" >
                             {
                                 showAll ?
-                                    donation?.map(cardData => <DonationCard key={cardData?.id} cardData={cardData}></DonationCard>) : 
-                                        donation?.slice(0,4).map(cardData => <DonationCard key={cardData?.id} cardData={cardData}></DonationCard>)
-                            
-         
-                                
-    
+                                    donation?.map(cardData => <DonationCard key={cardData?.id} cardData={cardData}></DonationCard>) :
+                                    donation?.slice(0, 4).map(cardData => <DonationCard key={cardData?.id} cardData={cardData}></DonationCard>)
+
+
                             }
-
-
 
                         </div>
                     </div>

@@ -72,7 +72,7 @@ useEffect(() => {
     <PieChart width={500} height={500}>
       <Pie
         data={data}
-        cx={250}
+        cx={280}
         cy={250}
         labelLine={false}
         label={renderCustomizedLabel}

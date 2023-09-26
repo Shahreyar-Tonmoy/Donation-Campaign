@@ -1,10 +1,10 @@
-import React from 'react';
+
 import  PieChart  from './PieChart';
 
 const Statistics = () => {
   return (
-    <div className='flex justify-center mx-auto mb-20'>
-     <PieChart />
+    <div className='flex -ml-20 justify-center items-center mb-20'>
+     <PieChart className="flex justify-center"/>
     </div>
   );
 };

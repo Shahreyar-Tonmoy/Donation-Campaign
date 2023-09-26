@@ -1,17 +1,5 @@
 import backgroundImage from "/Assignment/Assignment-8/src/assets/Banner.png";
 
-// const Banner = () => {
-//     return (
-
-//     );
-// };
-
-// export default Banner;
-
-
-
-
-
 
 /* eslint-disable react/prop-types */
 
