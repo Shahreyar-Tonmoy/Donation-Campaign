@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+
 
 const local = () => {
     return (
@@ -11,12 +11,18 @@ const local = () => {
 export default local;
 
 export const getDonation = () => {
+    
     const allData =(localStorage.getItem('donation'))
-    const datas = JSON.parse(allData)
-    const data = (datas.length);
+    const data = JSON.parse(allData)
     
     
+    if(data?.length <= 0 ){
+        return []
+    }
+    else{
+        return data
+    }
     
    
-    return data
+   
 }

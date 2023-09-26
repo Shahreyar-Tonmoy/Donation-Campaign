@@ -2,6 +2,8 @@ import { Cell, Legend, Pie, PieChart, Tooltip } from "recharts";
 
 import { useEffect, useState } from "react";
 import { getDonation } from "../../Components/local/local";
+import { useLoaderData } from "react-router-dom";
+
 
 const COLORS = ["#FF444A", "#00C49F"];
 
@@ -32,29 +34,39 @@ const renderCustomizedLabel = ({
   );
 };
 export default function App() {
-  const [totalDonation, setTotalDonation] = useState(0);
-  const [allDonation,setAllDonation] = useState()
+  const loadData =useLoaderData()
+  const totalDonation = loadData.length
+  
+ 
+  
+
+
+  const [yourDonation, setYourDonation] = useState(0);
+  
+  
+
+
+ 
+useEffect(() => {
+  const data = getDonation();
+ 
+  
+  
+  setYourDonation(data?.length);
+}, []);
+
+
+
+
   
   const data = [
-    { name: "Total Donation", value: allDonation },
-    { name: "Your Donation", value: totalDonation },
+    { name: "Total Donation", value: totalDonation },
+    { name: "Your Donation", value: yourDonation },
   ];
 
  
 
-  useEffect(()=>{
-
-      fetch('/Donation.json')
-      .then(res=>res.json())
-      .then(data => setAllDonation(data.length))
-
-  },[])
-
-  useEffect(() => {
-    const datas = getDonation();
-    
-    setTotalDonation(datas);
-  }, [totalDonation]);
+ 
 
   return (
     <PieChart width={500} height={500}>
